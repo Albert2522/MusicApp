@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
   def require_user
     redirect_to new_session_url
   end
+
+  def require_login
+    redirect_to new_session_url unless current_user
+  end
 end

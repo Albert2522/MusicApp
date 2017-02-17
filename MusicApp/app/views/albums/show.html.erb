@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @album.name %></h1>
+
+<% @album.tracks.each do |track| %>
+  <%= link_to "#{track.name}", track_url(track) %><br>
+<% end %>
+
+<%= link_to 'Back', albums_path %>
