@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<td>Track Name: </td> <%= @track.name %><br>
+<td>  Album: </td> <%= link_to "#{@track.album.name}", album_url(@track.album) %><br>
+<td>Type: </td> <%= @track.track_type %><br>
+<td>Band: </td> <%= link_to "#{@track.band.name}", band_url(@track.band) %><br>
+<td>Lyrics: </td> <%= @track.lyrics %><br>
+<br>
+<%= link_to 'Delete', track_url(@track), method: 'delete' %>
 <%= link_to 'Edit', edit_track_path(@track) %> |
 <%= link_to 'Back', tracks_path %>

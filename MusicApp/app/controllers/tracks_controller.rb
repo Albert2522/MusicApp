@@ -18,12 +18,16 @@ class TracksController < ApplicationController
       @tracks = Track.all
     end
 
+    def show
+      @track = Track.find_by(id: params[:id])
+    end
+
     def edit
-      @track = Track.find_by_name(tracks_params)
+      @track = Track.find_by(id: params[:id])
     end
 
     def update
-      @track = Track.find_by_name(tracks_params)
+      @track = Track.find_by(id: params[:id])
       if @track.update(tracks_params)
         redirect_to tracks_url
       else
@@ -32,7 +36,7 @@ class TracksController < ApplicationController
     end
 
     def destroy
-      @track = Track.find_by_name(tracks_params)
+      @track = Track.find_by(id: params[:id])
       if @track.destroy
         redirect_to tracks_url
       else
