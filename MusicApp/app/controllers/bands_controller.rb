@@ -24,11 +24,11 @@ class BandsController < ApplicationController
   end
 
   def edit
-    @band = Band.find_by_name(bands_params)
+    @band = Band.find_by(id: params[:id])
   end
 
   def update
-    @band = Band.find_by_name(bands_params)
+    @band = Band.find_by(id: params[:id])
     if @band.update(bands_params)
       redirect_to bands_url
     else

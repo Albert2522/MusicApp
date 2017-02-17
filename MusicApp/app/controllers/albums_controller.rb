@@ -22,11 +22,11 @@ class AlbumsController < ApplicationController
     end
 
     def edit
-      @album = Album.find_by_name(albums_params)
+      @album = Album.find_by_id(params[:id])
     end
 
     def update
-      @album = Album.find_by_name(albums_params)
+      @album = Album.find_by_id(params[:id])
       if @album.update(albums_params)
         redirect_to albums_url
       else
@@ -35,7 +35,7 @@ class AlbumsController < ApplicationController
     end
 
     def destroy
-      @album = Album.find_by_name(albums_params)
+      @album = Album.find_by_id(params[:id])
       if @album.destroy
         redirect_to albums_url
       else
