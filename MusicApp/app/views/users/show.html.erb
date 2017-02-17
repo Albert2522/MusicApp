@@ -15,3 +15,7 @@
 <%= link_to 'Back', users_path %> |
 <%= link_to 'Delete', user_url(@user.id) ,confirm: 'Are you sure?', method: 'DELETE' %>
 <%= link_to 'LogOut', session_url, method: 'delete'  %>
+<br>
+<%= link_to 'Albums', albums_url %>
+<%= link_to 'Tracks', tracks_url %>
+<%= link_to 'Bands', bands_url %>
